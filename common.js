@@ -15,7 +15,7 @@ function swap(arr, i, j) {
   arr[j] = t
 }
 
-function verifyAscArrayIsSorted(arr) {
+function ascArraySorted(arr) {
   for (var i = 1; i < arr.length; i++) {
   	if (arr[i] < arr[i-1])
   	  return false
@@ -28,4 +28,10 @@ function assert(result, test_name) {
     console.log("Test passed:", test_name)
   else
     console.error("Test failed:", test_name)
+}
+
+function runSort(algorithm, n) {
+  arr = randomArrayOfNumbers(-500, 500, n)
+  algorithm(arr)
+  assert(ascArraySorted(arr), algorithm.name + " sort with " + n + " elements")
 }
