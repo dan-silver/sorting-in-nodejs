@@ -1,9 +1,3 @@
-executeInsertionSort(5)
-executeInsertionSort(10)
-executeInsertionSort(50)
-executeInsertionSort(500)
-executeInsertionSort(1000)
-
 function executeInsertionSort(n) {
   arr = randomArrayOfNumbers(-500, 500, n)
   insertionSort(arr)
