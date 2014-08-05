@@ -5,7 +5,7 @@ module.exports = function(arr) {
 
 	var arr_len = arr.length
 	for (var i = 0; i < arr_len; i++) {
-		var cur = (function(){return arr.pop()})()
+		var cur = arr.pop()
 		r[cur] = cur 
 		if (cur > max) max = cur
 		if (cur < min) min = cur
