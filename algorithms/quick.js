@@ -11,21 +11,15 @@ function quicksort(arr, l, r) {
 }
 
 function partition(arr, left, right) {
-  pivot_index = choose_pivot(left, right)
-  pivot_value = arr[pivot_index]
-  swap(arr, pivot_index, right)
+  pivot_value = arr[left]
+  swap(arr, left, right)
   var storeIndex = left
   for (var i = left; i < right; i++) {
-    if (arr[i] > pivot_value) {
+    if (pivot_value > arr[i]) {
       swap(arr, i, storeIndex)
       storeIndex++
     }
   }
   swap(arr, storeIndex, right)
-  return storeIndex;
-}
-
-function choose_pivot(left, right) {
-  var len_min_1 = right - left 
-  return left + Math.floor( Math.random() * len_min_1 )
+  return storeIndex
 }
