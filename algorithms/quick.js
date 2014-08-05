@@ -11,9 +11,8 @@ function quicksort(arr, l, r) {
 }
 
 function partition(arr, left, right) {
-  pivot_index = left
-  pivot_value = arr[pivot_index]
-  swap(arr, pivot_index, right)
+  pivot_value = arr[left]
+  swap(arr, left, right)
   var storeIndex = left
   for (var i = left; i < right; i++) {
     if (pivot_value > arr[i]) {
@@ -22,5 +21,5 @@ function partition(arr, left, right) {
     }
   }
   swap(arr, storeIndex, right)
-  return storeIndex;
+  return storeIndex
 }
