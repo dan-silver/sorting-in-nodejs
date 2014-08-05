@@ -13,19 +13,19 @@ function quicksort(arr, l, r) {
 function partition(arr, left, right) {
   pivot_index = choose_pivot(left, right)
   pivot_value = arr[pivot_index]
-  swap(pivot_index, right)
-  var wall = left
+  swap(arr, pivot_index, right)
+  var storeIndex = left
   for (var i = left; i < right; i++) {
     if (arr[i] > pivot_value) {
-      swap(arr, i, wall)
-      wall++
+      swap(arr, i, storeIndex)
+      storeIndex++
     }
   }
-  swap(arr, wall, right)
-  return wall;
+  swap(arr, storeIndex, right)
+  return storeIndex;
 }
 
-var choose_pivot = function( left, right ) {
+function choose_pivot(left, right) {
   var len_min_1 = right - left 
   return left + Math.floor( Math.random() * len_min_1 )
 }
