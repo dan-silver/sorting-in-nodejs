@@ -1,4 +1,4 @@
-function bubble(arr) {
+module.exports = function(arr) {
   for (var i = arr.length; i > 0; i--) {
     swapped = false
     for (var k = arr.length - 1; k >= 0; k--) {
